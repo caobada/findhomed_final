@@ -46,17 +46,14 @@ if ($var[1] == 1) {
                                 <div class="area"><b>{{$top6post->area}}m<sup>2</sup></b></div>
                                 <div class="location"><b>{{$top6post->districted->type}} {{$top6post->districted->name}}, {{$top6post->province->name}}</b></div>
                             </div>
-                            <div class="by-author"><p >
-                                <?php
-$lenght = str_word_count($top6post->desc);
-if ($lenght > 40) {
-	echo strip_tags(substr($top6post->desc, 0, 120)) . '...';
-} else {
-	echo strip_tags($top6post->desc);
-}
-
-?>
-                            </p></div>
+                            <div class="by-author" style="font-size:30px">
+                                <p style="color:red">
+                                    <span data-toggle="tooltip" data-placement="top" title="Wifi miễn phí"><i class="fas fa-wifi"></i></span>
+                                    <span data-toggle="tooltip" data-placement="top" title="Cho nuôi thú cưng"><i class="fas fa-dog"></i></span>
+                                    <span data-toggle="tooltip" data-placement="top" title="Có chỗ giữ xe"><i class="fas fa-motorcycle"></i></span>
+                                    <span data-toggle="tooltip" data-placement="top" title="Giờ giấc tự do"><i class="fas fa-clock"></i></span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

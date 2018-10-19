@@ -14,6 +14,9 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
 	<link rel="stylesheet" href="{{asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
 	<!--select 2-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
 	<link href="{{asset('css/select2.min.css')}}" rel="stylesheet" />
 	<link href="{{asset('file_upload/fileinput.min.css')}}">
 	<link rel="stylesheet" href="{{asset('css/style.css')}}">
@@ -259,6 +262,10 @@
 </html>
 <script type="text/javascript" src="{{asset('js/jquery.session.js')}}"></script>
 <script type="text/javascript">
+	$(function () {
+  		$('[data-toggle="tooltip"]').tooltip();
+		
+	})
 	var offcanvasMenu = function() {
 
 		$('#page').prepend('<div id="fh5co-offcanvas" />');
