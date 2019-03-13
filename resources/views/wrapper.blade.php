@@ -83,12 +83,50 @@
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="col-md-12 text-center">
 						<div class="display-t">
 							<div class="display-tc animate-box" data-animate-effect="fadeIn">
-								<h1><span style="color:#000;font-weight: 700">find</span><span  style="color:#F85A16;font-weight: 700 ">homeD.</span></h1>
-								<h2>Website tìm kiếm phòng trọ uy tín số 1 Việt Nam</h2>
-
+								<div class="search-form">
+								<div class="title-caption">Tìm kiếm nhanh</div>
+									<section class="search-sec">
+											<form action="#" method="post" novalidate="novalidate">
+												<div class="row">
+													<div class="col-lg-12 col-md-12">
+														<div class="row">
+															<div class="col-lg-3 col-md-3 col-sm-12 p-0 input-container">
+																<select class="form-control search-slt select" id="select">
+																	<option>Chọn Loại Tin</option>
+																	@foreach($hometype as $hometypes)
+																	<option
+																	<?php if (isset($_GET['type'])) {if ($hometypes->id == $_GET['type']) {echo "selected='selected'";}}?>
+																	value="{{$hometypes->id}}">{{$hometypes->nametype}}</option>
+																	@endforeach
+																</select> 
+															</div>
+															<div class="col-lg-3 col-md-3 col-sm-12 p-0">
+																<select class="form-control search-slt" id="province"  name="province">
+																	<option>Chọn Tỉnh Thành</option>
+																	@foreach($province as $provinces)
+																	<option <?php if (isset($_GET['provinces'])) {if ($provinces->provinceid == $_GET['province']) {echo "selected='selected'";}}?>
+																	value="{{$provinces->provinceid}}">{{$provinces->name}}</option>
+																	@endforeach
+																</select>
+															</div>
+															<div class="col-lg-3 col-md-3 col-sm-12 p-0">
+																<select id="district" class="form-control " name="district">
+																	<option value="">Quận Huyện</option>
+																</select>
+															</div>
+															<div class="col-lg-3 col-md-3 col-sm-12 p-0">
+																<button type="button" class="btn btn-primary wrn-btn">Search</button>
+																<button type="button" class="">Search</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</form>
+									</section>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -99,86 +137,7 @@
 
 
 		<!-- Services -->
-		<section style="padding: 0px;margin: 0px ">
-			<div class="container ">
-				<div class="searchbar ">
-					<div class="row ">
-						<div class="col-lg-12 a">
-							<div>
-								<div class="filter "><b>LỌC TIN NHANH</b></div>
-								<div class="row" >
-									<form id="form-search" method="get" action="{{url('search')}}" >
-										<div class="col-lg-2">
-											<span class="badge ">Loại tin</span>
-											<select class="form-control select" name="type">
-												<option value="">Chọn loại tin</option>
-												@foreach($hometype as $hometypes)
-												<option
-												<?php if (isset($_GET['type'])) {if ($hometypes->id == $_GET['type']) {echo "selected='selected'";}}?>
-												value="{{$hometypes->id}}">{{$hometypes->nametype}}</option>
-												@endforeach
-											</select>
-											<div class="errorTxt"></div>
-										</div>
-										<!-- Tỉnh thành  -->
-										<div class="col-lg-2 ">
-											<span class="badge ">Tỉnh thành</span>
-											<select id="province" class="form-control " name="province">
-												<option value="">Tất cả</option>
-												@foreach($province as $province)
-												<option <?php if (isset($_GET['province'])) {if ($province->provinceid == $_GET['province']) {echo "selected='selected'";}}?>
-												value="{{$province->provinceid}}">{{$province->name}}</option>
-												@endforeach
-											</select>
-										</div>
-										<!-- Quận huyện -->
-										<div  class="col-lg-2 ">
-											<span class="badge ">Quận huyện</span>
-											<select id="district" class="form-control " name="district">
-												<option value="">Tất cả</option>
-											</select>
-										</div>
-										<!-- Khoảng giá -->
-										<div class="col-lg-2 ">
-											<span class="badge ">Khoảng giá</span>
-											<select id="price" class="form-control " name="price">
-												<option value="">Tất cả</option>
-												<option value="1">Dưới 1 triệu</option>
-												<option value="2">Từ 1->2 triệu</option>
-												<option value="3">Từ 2->5 triệu</option>
-												<option value="4">Trên 5 triệu</option>
-											</select>
-										</div>
-										<!-- Diện tích -->
-										<div class="col-lg-2 ">
-											<span class="badge ">Diện tích</span>
-											<select id="area" class="form-control " name="area">
-												<option  value="">Tất cả</option>
-												<option
-												<?php if (isset($_GET['area'])) {if ($_GET['area'] == 1) {echo "selected='selected'";}}?>
-												value="1">Dưới 10m<sub>2</sub></option>
-												<option <?php if (isset($_GET['area'])) {if ($_GET['area'] == 2) {echo "selected='selected'";}}?>
-												value="2">10m2 tới 30m2</option>
-												<option <?php if (isset($_GET['area'])) {if ($_GET['area'] == 3) {echo "selected='selected'";}}?>
-												value="3">Trên 30m2</option>
-											</select>
-										</div>
-										<!--  Button -->
-										<div class="col-12">
-											<span class="badge " ">&nbsp;</span>
-											<button id="filter" class="btn btn-warning" style="margin-top: 20px;">
-												<i class="fa fa-filter"></i> Lọc tin
-											</button>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
+	
 		@yield('content')
 
 	</div>
@@ -266,49 +225,6 @@
   		$('[data-toggle="tooltip"]').tooltip();
 		
 	})
-	var offcanvasMenu = function() {
-
-		$('#page').prepend('<div id="fh5co-offcanvas" />');
-		$('#page').prepend('<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle fh5co-nav-white"><i></i></a>');
-		var clone1 = $('.menu-1 > ul').clone();
-		$('#fh5co-offcanvas').append(clone1);
-		var clone2 = $('.menu-2 > ul').clone();
-		$('#fh5co-offcanvas').append(clone2);
-
-		$('#fh5co-offcanvas .has-dropdown').addClass('offcanvas-has-dropdown');
-		$('#fh5co-offcanvas')
-		.find('li')
-		.removeClass('has-dropdown');
-
-		// Hover dropdown menu on mobile
-		$('.offcanvas-has-dropdown').mouseenter(function(){
-			var $this = $(this);
-
-			$this
-			.addClass('active')
-			.find('ul')
-			.slideToggle();
-		}).mouseleave(function(){
-
-			var $this = $(this);
-			$this
-			.removeClass('active')
-			.find('ul').slideToggle();
-
-
-		});
-
-
-		$(window).resize(function(){
-
-			if ( $('body').hasClass('offcanvas') ) {
-
-				$('body').removeClass('offcanvas');
-				$('.js-fh5co-nav-toggle').removeClass('active');
-
-			}
-		});
-	};
 	$(function(){
 
 
@@ -382,16 +298,13 @@
 
 		offcanvasMenu();
 
-		$('#province').on('change',function(){
+		$('document').on('change','#province',function(event){
 			var provinceid = $(this).val();
-			var href = window.location.href;
-			var array = href.split("/");
-			var len = array.length
-			if(len==6) url = 'province/'+ provinceid;
-			else url = '../province/'+ provinceid
-				if(provinceid=="") provinceid=0;
+			console.log('aaaaa');
+	 		url = '/province/'+ provinceid;
+				
 			$.ajax({
-				type: 'GET',
+				type: 'get',
 				url : url ,
 				success:function(resp){
 					$("#district").html(resp);
@@ -459,9 +372,7 @@
 
 		});
 
-		$('#home-save').click(function(){
-			$('.list-home-save').slideToggle();
-		});
+
 	});
 
 	$(function(){
@@ -470,57 +381,10 @@
 		$('#district').select2();
 		$('#price').select2();
 		$('#area').select2();
-		gethomesave();
 
 	})
 
-	function gethomesave(){
-		array = [];
-		array.push($.session.get('id'));
-		var id = $('#save').data('id');
-		var chuoi = $.session.get('id');
-
-		try{
-			var mang = chuoi.split(',');
-			mang.shift();
-			var count = counthome(mang);
-
-
-
-			if(!(mang===null)){
-				$.ajax({
-					method: 'post',
-					data:{"mang":mang,"_token": "{{ csrf_token() }}"},
-
-					url:'{{url("save-home")}}',
-					success:function(resp){
-						$("#show-save-home").html(resp);
-					}
-				});}
-				$("#home-save").text(count+' tin lưu');
-			}catch(e){
-
-			}
-			if(!(count===undefined)){
-				$("#home-save").css('display','block');
-
-			}
-			if(count==0){
-				$("#home-save").css('display','none');
-			}
-			try{
-				if(chuoi.indexOf(id)!=-1){
-					$("#save").css('display','none');
-					$('#dis').css('display','inline-block');
-
-				}
-			}catch(e){
-
-			}
-		}
-		function counthome(array){
-			return array.length;
-		}
+	
 	</script>
 
 	@yield('script')
