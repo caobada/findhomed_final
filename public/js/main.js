@@ -305,6 +305,7 @@
 
 	
 	$(function(){
+	
 		mobileMenuOutsideClick();
 		offcanvasMenu();
 		burgerMenu();

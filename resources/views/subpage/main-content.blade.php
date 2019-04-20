@@ -16,48 +16,156 @@
             @endif
             <div class="row">
                 <!-- Item-->
-                @foreach($top6post as $top6post)
-                <div class="col-md-6 col-lg-6 col-xm-12">
-                    <div class="media Item">
-                        <div class="pull-left">
-                            <?php
-$img = explode(";", $top6post->image);
-$numpic = count($img);
-
-?>
-                            <div class="media-object" style='background-image: url({{asset("images/home/$img[0]")}})'>
-                                <div class="numpic">{{$numpic}} ảnh</div>
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading"><a href='{{url("detail/$top6post->home_id")}}'>{{$top6post->title}}</a></h4>
-                            <div class="clearfix">
-                                <div class="btn price">
-                                    <?php
-$var = explode("@", $top6post->price);
-if ($var[1] == 1) {
-	echo number_format($var[0]) . " Nghìn/tháng";
-} else {
-	echo $var[0] . ' Triệu/tháng';
-}
-
-?>
+                <div class="col-md-6 col-lg-3 col-xs-12">
+                    <a href="#" class="div-home">
+                        <div class="item-home item-block">
+                            <div class="div-photo-home" style="background-image:url('{{asset('images/home/16938477_632057193663178_7888863733659049703_n.jpg')}}')"></div>
+                            <div class="number-pic">10 ảnh</div>
+                            <div class="div-block-con">
+                                <div class="div-block-name">
+                                    <h3>Cho thuê nhà trọ nguyên căn quận Gò Vấp</h3>
                                 </div>
-                                <div class="area"><b>{{$top6post->area}}m<sup>2</sup></b></div>
-                                <div class="location"><b>{{$top6post->districted->type}} {{$top6post->districted->name}}, {{$top6post->province->name}}</b></div>
-                            </div>
-                            <div class="by-author" style="font-size:30px">
-                                <p style="color:red">
-                                    <span data-toggle="tooltip" data-placement="top" title="Wifi miễn phí"><i class="fas fa-wifi"></i></span>
-                                    <span data-toggle="tooltip" data-placement="top" title="Cho nuôi thú cưng"><i class="fas fa-dog"></i></span>
-                                    <span data-toggle="tooltip" data-placement="top" title="Có chỗ giữ xe"><i class="fas fa-motorcycle"></i></span>
-                                    <span data-toggle="tooltip" data-placement="top" title="Giờ giấc tự do"><i class="fas fa-clock"></i></span>
-                                </p>
+                                <div class="div-block-det">
+                                    <div class="div-icon-text">
+                                        <div class="div-block-ico _1"></div>
+                                        <div class="div-block-txt">30m2</div>
+                                    </div>
+                                    <div class="div-icon-text">
+                                        <div class="div-block-ico"></div>
+                                        <div class="div-block-txt">Gò Vấp, Hồ Chí Minh</div>
+                                    </div>
+                                    <div class="div-icon-text">
+                                        <div class="div-block-ico _2"></div>
+                                        <div class="div-block-txt">3,000,000 VNĐ/tháng</div>
+                                    </div>
+                                    <div class="div-icon-text">
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room"style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div style="font-size: 10px;width:15px;height:15px;margin-left:10px;color:#f60867" class="fas fa-plus"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                @endforeach
+                <!--end Item -->
+                        <!-- Item-->
+                        <div class="col-md-6 col-lg-3 col-xs-12">
+                    <a href="#" class="div-home">
+                        <div class="item-home item-block">
+                            <div class="div-photo-home" style="background-image:url('{{asset('images/home/16938477_632057193663178_7888863733659049703_n.jpg')}}')"></div>
+                            <div class="number-pic">10 ảnh</div>
+                            <div class="div-block-con">
+                                <div class="div-block-name">
+                                    <h3>Cho thuê nhà trọ nguyên căn quận Gò Vấp</h3>
+                                </div>
+                                <div class="div-block-det">
+                                    <div class="div-icon-text">
+                                        <div class="div-block-ico _1"></div>
+                                        <div class="div-block-txt">30m2</div>
+                                    </div>
+                                    <div class="div-icon-text">
+                                        <div class="div-block-ico"></div>
+                                        <div class="div-block-txt">Gò Vấp, Hồ Chí Minh</div>
+                                    </div>
+                                    <div class="div-icon-text">
+                                        <div class="div-block-ico _2"></div>
+                                        <div class="div-block-txt">3,000,000 VNĐ/tháng</div>
+                                    </div>
+                                    <div class="div-icon-text">
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room"style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div style="font-size: 10px;width:15px;height:15px;margin-left:10px;color:#f60867" class="fas fa-plus"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!--end Item -->
+                        <!-- Item-->
+                        <div class="col-md-6 col-lg-3 col-xs-12">
+                    <a href="#" class="div-home">
+                        <div class="item-home item-block">
+                            <div class="div-photo-home" style="background-image:url('{{asset('images/home/16938477_632057193663178_7888863733659049703_n.jpg')}}')"></div>
+                            <div class="number-pic">10 ảnh</div>
+                            <div class="div-block-con">
+                                <div class="div-block-name">
+                                    <h3>Cho thuê nhà trọ nguyên căn quận Gò Vấp</h3>
+                                </div>
+                                <div class="div-block-det">
+                                    <div class="div-icon-text">
+                                        <div class="div-block-ico _1"></div>
+                                        <div class="div-block-txt">30m2</div>
+                                    </div>
+                                    <div class="div-icon-text">
+                                        <div class="div-block-ico"></div>
+                                        <div class="div-block-txt">Gò Vấp, Hồ Chí Minh</div>
+                                    </div>
+                                    <div class="div-icon-text">
+                                        <div class="div-block-ico _2"></div>
+                                        <div class="div-block-txt">3,000,000 VNĐ/tháng</div>
+                                    </div>
+                                    <div class="div-icon-text">
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room"style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div style="font-size: 10px;width:15px;height:15px;margin-left:10px;color:#f60867" class="fas fa-plus"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!--end Item -->
+                        <!-- Item-->
+                <div class="col-md-6 col-lg-3 col-xs-12">
+                    <a href="#" class="div-home">
+                        <div class="item-home item-block">
+                            <div class="div-photo-home" style="background-image:url('{{asset('images/home/16938477_632057193663178_7888863733659049703_n.jpg')}}')"></div>
+                            <div class="number-pic">10 ảnh</div>
+                            <div class="div-block-con">
+                                <div class="div-block-name">
+                                    <h3>Cho thuê nhà trọ nguyên căn quận Gò Vấp</h3>
+                                </div>
+                                <div class="div-block-det">
+                                    <div class="div-icon-text">
+                                        <div class="div-block-ico _1"></div>
+                                        <div class="div-block-txt">30m2</div>
+                                    </div>
+                                    <div class="div-icon-text">
+                                        <div class="div-block-ico"></div>
+                                        <div class="div-block-txt">Gò Vấp, Hồ Chí Minh</div>
+                                    </div>
+                                    <div class="div-icon-text">
+                                        <div class="div-block-ico _2"></div>
+                                        <div class="div-block-txt">3,000,000 VNĐ/tháng</div>
+                                    </div>
+                                    <div class="div-icon-text">
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room"style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div class="icon-faci-2" data-toggle="tooltip" data-placement="top" title="Gym room" style="margin-left:10px"></div>
+                                        <div style="font-size: 10px;width:15px;height:15px;margin-left:10px;color:#f60867" class="fas fa-plus"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
                 <!--end Item -->
 
             </div>
@@ -66,4 +174,8 @@ if ($var[1] == 1) {
 </div>
 
 @include('subpage.left-main-content')
+@endsection
+
+@section('script')
+    <script src="{{asset('js/home.js')}}"></script>
 @endsection
