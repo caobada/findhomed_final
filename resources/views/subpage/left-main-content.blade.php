@@ -4,7 +4,7 @@
             <div class="block-left">
                 <div class="wrapper">
                     <ul class="list-post">
-                        @foreach($top10s as $top10)
+                        @foreach($second_view as $top10)
                         <li class="post-item">
                             <div class="media item-new">
                                 <div class="pull-left">
@@ -54,7 +54,7 @@ if ($var[1] == 1) {
                         </li>
 
                         @endforeach
-                         {{ $top10s->render()}}
+                         {{ $second_view->render()}}
                     </ul>
 
                 </div>

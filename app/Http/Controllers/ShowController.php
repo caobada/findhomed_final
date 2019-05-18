@@ -23,12 +23,12 @@ class ShowController extends Controller {
 		$this->province = Province::orderBy('name', 'ASC')->get();
 	}
 	public function index() {
-		$topviewpost = Home::orderBy('view', 'Desc')->where('hienthi', 1)->limit(6)->get();
+		$top_view = Home::orderBy('view', 'Desc')->where('hienthi', 1)->limit(12)->get();
 
-		$top10 = Home::orderBy('home_id', 'Desc')->where('hienthi', 1)->paginate(10);
+		$second_view = Home::orderBy('home_id', 'Desc')->where('hienthi', 1)->paginate(10);
 		$rand = Home::all()->random(3)->where('hienthi', 1);
 
-		return view('subpage.main-content', ['hometype' => $this->Menu, 'top6post' => $topviewpost, 'top10s' => $top10, 'rand' => $rand, 'province' => $this->province]);
+		return view('subpage.main-content', ['hometype' => $this->Menu, 'top_view' => $top_view, 'second_view' => $second_view, 'rand' => $rand, 'province' => $this->province]);
 
 	}
 	public function showDetail() {
@@ -43,7 +43,7 @@ class ShowController extends Controller {
 			$district = District::orderBy('name', 'ASC')->where('provinceid', $id)->get();
 			echo "<option value=''>Tất cả</option>";
 			foreach ($district as $district) {
-				echo "<option  value='$district->districtid'>$district->type $district->name</option>";
+				echo "<option value='$district->districtid'>$district->type $district->name</option>";
 			}
 		}
 
@@ -65,10 +65,10 @@ class ShowController extends Controller {
 	public function ShowType($type) {
 		try {
 			$type_id = HomeType::select('id')->where('nametypelink', $type)->get();
-			$type_home = Home::where('type_id', $type_id[0]->id)->orderBy('view', 'Desc')->where('hienthi', 1)->limit(6)->get();
-			$top10 = Home::where('type_id', $type_id[0]->id)->orderBy('home_id', 'Desc')->where('hienthi', 1)->paginate(10);
+			$top_view = Home::orderBy('view', 'Desc')->where('hienthi', 1)->limit(12)->get();
+			$second_view = Home::where('type_id', $type_id[0]->id)->orderBy('home_id', 'Desc')->where('hienthi', 1)->paginate(10);
 			$rand = Home::all()->random(3)->where('hienthi', 1);
-			return view('subpage.main-content', ['hometype' => $this->Menu, 'top6post' => $type_home, 'top10s' => $top10, 'rand' => $rand, 'province' => $this->province]);
+			return view('subpage.main-content', ['hometype' => $this->Menu, 'top_view' => $top_view, 'second_view' => $second_view, 'rand' => $rand, 'province' => $this->province]);
 		} catch (\Exception $ex) {
 			return view('errors.404');
 		}

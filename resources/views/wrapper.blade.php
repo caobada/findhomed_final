@@ -4,7 +4,7 @@
 	<title>@yield('title')</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	@yield('link')
-	@include('layout/frontend/import_css');
+	@include('layout/frontend/import_css')
 	<script  src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
 	<style type="text/css">
 	*{
